@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/inguest1.0/static/css/main.5b1695f2.css",
+    "main.js": "/inguest1.0/static/js/main.20b2ac5a.js",
+    "index.html": "/inguest1.0/index.html",
+    "main.5b1695f2.css.map": "/inguest1.0/static/css/main.5b1695f2.css.map",
+    "main.20b2ac5a.js.map": "/inguest1.0/static/js/main.20b2ac5a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b1695f2.css",
+    "static/js/main.20b2ac5a.js"
+  ]
+}
