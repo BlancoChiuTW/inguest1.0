@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'; // 正確的導入位置
 import styled from 'styled-components';
 
-
+const API_BASE_URL = 'https://inguest.azurewebsites.net'; 
 
 const Container = styled.div`
   max-width: 1300px;
@@ -77,7 +77,7 @@ function Content() {
 
   useEffect(() => {
     // 從後端獲取文章列表
-fetch('http://localhost:5000/api/articles')
+fetch(`${API_BASE_URL}/api/articles`)
       .then(response => response.json())
       .then(data => setArticles(data))
       .catch(error => console.error("Error fetching articles:", error));
@@ -90,7 +90,7 @@ fetch('http://localhost:5000/api/articles')
           return (
             <StyledLink key={article.id} to={`/article/${article.id}`}>
               <HighlightedArticleCard>
-              <img src={`http://localhost:5000${article.imageUrl}`} alt={article.title} />
+                <img src={`${API_BASE_URL}${article.imageUrl}`} alt={article.title} />  // 修改這裡
                 <ArticleInfo>
                   <p id="category"><span>{article.category}</span></p>
                   <h2>{article.title}</h2>
@@ -104,7 +104,7 @@ fetch('http://localhost:5000/api/articles')
           return (
             <StyledLink key={article.id} to={`/article/${article.id}`}>
               <ArticleCard>
-              <img src={`http://localhost:5000${article.imageUrl}`} alt={article.title} />
+                <img src={`${API_BASE_URL}${article.imageUrl}`} alt={article.title} />  // 修改這裡
                 <ArticleInfo>
                   <p><span>{article.category}</span></p>
                   <h2>{article.title}</h2>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
+const API_BASE_URL = 'https://inguest.azurewebsites.net';
 
 const Container = styled.div`
   max-width: 1300px;
@@ -51,13 +52,13 @@ function Article() {
 
   useEffect(() => {
     // 從後端獲取文章內容
-    fetch(`http://localhost:5000/api/articles/${id}`)
+    fetch(`${API_BASE_URL}/api/articles/${id}`)
     .then(response => response.json())
       .then(data => setContent(data))
       .catch(error => console.error("Error fetching article content:", error));
 
     // 從後端獲取文章列表
-    fetch('http://localhost:5000/api/articles')
+    fetch(`${API_BASE_URL}/api/articles/${id}`)
     .then(response => response.json())
       .then(data => {
         const foundArticle = data.find(article => article.id.toString() === id);
